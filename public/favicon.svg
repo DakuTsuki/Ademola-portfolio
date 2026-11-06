@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#141414" />
+  <!-- Editorial double-A typography mark -->
+  <text x="32" y="44" 
+        font-family="'Newsreader', Georgia, serif" 
+        font-size="34" 
+        font-weight="500" 
+        fill="#FAF9F6" 
+        text-anchor="middle" 
+        letter-spacing="-2">AA</text>
+  <circle cx="52" cy="14" r="4" fill="#C84B26" />
+</svg>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { portfolioData } from './data/portfolioData';
+import { ThreeBackground } from './components/ThreeBackground';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -50,19 +51,20 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-surface-light-bg dark:bg-surface-dark-bg text-surface-light-text dark:text-surface-dark-text selection:bg-accent selection:text-white transition-colors duration-200">
+    <div className="relative min-h-screen flex flex-col bg-surface-light-bg/80 dark:bg-surface-dark-bg/80 text-surface-light-text dark:text-surface-dark-text selection:bg-accent selection:text-white transition-colors duration-200">
       
-      {/* Editorial Header & Nav */}
+      {/* 3D Interactive Three.js Background Canvas */}
+      <ThreeBackground />
+
+      {/* Clean, Uncluttered Editorial Header */}
       <Header
         name={personal.name}
-        role={personal.role}
         cvUrl={personal.cvUrl}
-        onOpenTerminal={() => setTerminalOpen(true)}
       />
 
       {/* Main Content */}
       <main className="flex-1">
-        {/* 1. Hero with 3D Three.js Interactive Sculpture */}
+        {/* 1. Hero with 3D Three.js Interactive Sculpture & Photo Slot */}
         <Hero
           name={personal.name}
           role={personal.role}

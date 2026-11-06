@@ -55,11 +55,11 @@ export const Hero: React.FC<HeroProps> = ({ name, headline }) => {
               </a>
 
               <a
-                href="#developer-card"
+                href="#contact"
                 onClick={() => sounds.playClick()}
-                className="inline-flex items-center gap-2 px-6 py-3.5 border border-surface-light-border dark:border-surface-dark-border hover:border-accent hover:text-accent dark:hover:border-accent-dark dark:hover:text-accent-dark text-surface-light-text dark:text-surface-dark-text bg-surface-light-card dark:bg-surface-dark-card text-sm font-medium tracking-wide rounded transition-colors duration-150"
+                className="inline-flex items-center gap-2 px-6 py-3.5 border border-surface-light-border dark:border-surface-dark-border hover:border-accent hover:text-accent dark:hover:border-accent-dark dark:hover:text-accent-dark text-surface-light-text dark:text-surface-dark-text bg-surface-light-card/80 dark:bg-surface-dark-card/80 backdrop-blur-sm text-sm font-medium tracking-wide rounded transition-colors duration-150"
               >
-                <span>Interactive 3D Card</span>
+                <span>Get in touch</span>
               </a>
             </div>
 

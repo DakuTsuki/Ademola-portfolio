@@ -51,70 +51,75 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-surface-light-bg/80 dark:bg-surface-dark-bg/80 text-surface-light-text dark:text-surface-dark-text selection:bg-accent selection:text-white transition-colors duration-200">
+    <div className="relative min-h-screen bg-transparent text-surface-light-text dark:text-surface-dark-text selection:bg-accent selection:text-white transition-colors duration-200">
       
-      {/* 3D Interactive Three.js Background Canvas */}
+      {/* 3D Interactive Three.js Background Canvas (z-0) */}
       <ThreeBackground />
 
-      {/* Clean, Uncluttered Editorial Header */}
-      <Header
-        name={personal.name}
-        cvUrl={personal.cvUrl}
-      />
-
-      {/* Main Content */}
-      <main className="flex-1">
-        {/* 1. Hero with 3D Three.js Interactive Sculpture & Photo Slot */}
-        <Hero
+      {/* Foreground Content (z-10) */}
+      <div className="relative z-10 flex flex-col min-h-screen">
+        
+        {/* Clean, Uncluttered Editorial Header */}
+        <Header
           name={personal.name}
-          role={personal.role}
-          headline={personal.headline}
-        />
-
-        {/* 2. About */}
-        <About
-          aboutText={personal.about}
-        />
-
-        {/* 3. Skills */}
-        <Skills
-          skillGroups={skillGroups}
-        />
-
-        {/* 4. Interactive 3D Developer Card */}
-        <InteractiveDevCard
-          name={personal.name}
-          role={personal.role}
-          email={personal.email}
-          phone={personal.phone}
-          githubUrl={personal.githubUrl}
-          linkedinUrl={personal.linkedinUrl}
-        />
-
-        {/* 5. Projects with Interactive Filter & Architecture Inspector */}
-        <Projects
-          projects={projects}
-          onInspectArchitecture={(project) => setArchitectureProject(project)}
-        />
-
-        {/* 6. Code / GitHub */}
-        <CodeSection
-          githubUrl={personal.githubUrl}
-          codeInvite={personal.codeInvite}
-        />
-
-        {/* 7. Contact */}
-        <Contact
-          email={personal.email}
-          phone={personal.phone}
-          linkedinUrl={personal.linkedinUrl}
-          githubUrl={personal.githubUrl}
           cvUrl={personal.cvUrl}
         />
-      </main>
 
-      {/* Footer */}
-      <Footer name={personal.name} />
+        {/* Main Content */}
+        <main className="flex-1">
+          {/* 1. Hero with 3D Three.js Interactive Sculpture & Photo Slot */}
+          <Hero
+            name={personal.name}
+            role={personal.role}
+            headline={personal.headline}
+          />
+
+          {/* 2. About */}
+          <About
+            aboutText={personal.about}
+          />
+
+          {/* 3. Skills */}
+          <Skills
+            skillGroups={skillGroups}
+          />
+
+          {/* 4. Interactive 3D Developer Card */}
+          <InteractiveDevCard
+            name={personal.name}
+            role={personal.role}
+            email={personal.email}
+            phone={personal.phone}
+            githubUrl={personal.githubUrl}
+            linkedinUrl={personal.linkedinUrl}
+          />
+
+          {/* 5. Projects with Interactive Filter & Architecture Inspector */}
+          <Projects
+            projects={projects}
+            onInspectArchitecture={(project) => setArchitectureProject(project)}
+          />
+
+          {/* 6. Code / GitHub */}
+          <CodeSection
+            githubUrl={personal.githubUrl}
+            codeInvite={personal.codeInvite}
+          />
+
+          {/* 7. Contact */}
+          <Contact
+            email={personal.email}
+            phone={personal.phone}
+            linkedinUrl={personal.linkedinUrl}
+            githubUrl={personal.githubUrl}
+            cvUrl={personal.cvUrl}
+          />
+        </main>
+
+        {/* Footer */}
+        <Footer name={personal.name} />
+
+      </div>
 
       {/* Architecture Inspector Modal */}
       {architectureProject && (

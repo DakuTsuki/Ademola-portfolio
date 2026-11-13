@@ -5,6 +5,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Skills } from './components/Skills';
+import { TechCore3D } from './components/TechCore3D';
 import { InteractiveDevCard } from './components/InteractiveDevCard';
 import { Projects } from './components/Projects';
 import { ArchitectureModal } from './components/ArchitectureModal';
@@ -67,7 +68,7 @@ export const App: React.FC = () => {
 
         {/* Main Content */}
         <main className="flex-1">
-          {/* 1. Hero with 3D Three.js Interactive Sculpture & Photo Slot */}
+          {/* 1. Hero with Portrait Photo Slot (Mobile-Optimized, Zero Scroll Hijacking) */}
           <Hero
             name={personal.name}
             role={personal.role}
@@ -84,7 +85,10 @@ export const App: React.FC = () => {
             skillGroups={skillGroups}
           />
 
-          {/* 4. Interactive 3D Developer Card */}
+          {/* 4. Interactive 3D Tech Core Attraction */}
+          <TechCore3D />
+
+          {/* 5. Interactive 3D Developer Card */}
           <InteractiveDevCard
             name={personal.name}
             role={personal.role}
@@ -94,19 +98,19 @@ export const App: React.FC = () => {
             linkedinUrl={personal.linkedinUrl}
           />
 
-          {/* 5. Projects with Interactive Filter & Architecture Inspector */}
+          {/* 6. Projects with Interactive Filter & Architecture Inspector */}
           <Projects
             projects={projects}
             onInspectArchitecture={(project) => setArchitectureProject(project)}
           />
 
-          {/* 6. Code / GitHub */}
+          {/* 7. Code / GitHub */}
           <CodeSection
             githubUrl={personal.githubUrl}
             codeInvite={personal.codeInvite}
           />
 
-          {/* 7. Contact */}
+          {/* 8. Contact */}
           <Contact
             email={personal.email}
             phone={personal.phone}
